@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.1.7'
-gem 'bootstrap'
+gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'sqlite3'
 
