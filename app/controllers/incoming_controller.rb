@@ -7,7 +7,7 @@ class IncomingController < ApplicationController
     @topic = Topic.find_by(title: params[:subject])
     @url = params["body-plain"]
 
-    if user.nil?
+    if @user.nil?
       @user = User.new(email: params[:sender], password: 'password')
       @user.skip_confirmation!
       @user.save!
