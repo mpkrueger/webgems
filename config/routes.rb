@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   root to: 'welcome#index'
 
+  post :incoming, to: 'incoming#create'
+
  end
