@@ -6,6 +6,7 @@ gem 'rails', '4.1.7'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'devise'
 gem 'figaro', '1.0'
+gem 'faker'
 
 group :production do
   gem 'pg'

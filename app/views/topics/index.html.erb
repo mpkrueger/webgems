@@ -1,0 +1,15 @@
+<h1>Topics</h1>
+<%= link_to "New topic", new_topic_path %>
+<% @topics.each do |topic| %>
+  <h4><%= link_to topic.title, topic_path(topic.id) %></h4>
+  <small><%= link_to "Delete", topic_path(topic.id), method: :delete %></small>
+  <div class="container">
+    <div class="row">
+      <% topic.bookmarks.each do |bookmark| %>
+        <div class="col-md-3">
+          <p><%= link_to bookmark.url, bookmark.url %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,10 @@
+<h1 class="text-center"><%= @topic.title %></h1>
+<div class="container-flexible">
+  <div class="row">
+    <% @topic.bookmarks.each do |bookmark| %>
+      <div class="col-md-3">
+        <%= link_to bookmark.url, bookmark.url %>
+      </div>
+    <% end %>
+  </div>
+</div>
