@@ -3,7 +3,7 @@
 <%= link_to "New bookmark", new_topic_bookmark_path(@topic.id), class: 'btn btn-success' %>
 <div class="container-flexible">
   <div class="row">
-    <% @topic.bookmarks.each do |bookmark| %>
+    <% @bookmarks.each do |bookmark| %>
       <div class="col-md-3">
         <%= link_to bookmark.url, [@topic, bookmark] %>
       </div>

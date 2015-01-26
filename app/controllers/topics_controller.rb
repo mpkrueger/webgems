@@ -4,7 +4,8 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @topic = Topic.find(params[:id])
+    @topic = current_user.topics.find(params[:id])
+    @bookmarks = current_user.bookmarks.where(topic_id: params[:id])
   end
 
   def new
@@ -14,7 +15,7 @@ class TopicsController < ApplicationController
   end
 
   def destroy
-    topic = Topic.find(params[:id])
+    topic = current_user.find(params[:id])
     title = topic.title
 
     if topic.destroy

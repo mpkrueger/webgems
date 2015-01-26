@@ -1,4 +1,10 @@
 <h1><%= @bookmark.url %></h1>
 <p>Bookmark URL: <%= @bookmark.url %></p>
 <p>Topic: <%= @topic.title %></p>
-<%= link_to "Edit bookmark", edit_topic_bookmark_path, class: 'btn btn-success' %>
+<% if policy(@bookmark).edit? %>
+  <%= link_to "Edit bookmark", edit_topic_bookmark_path, class: 'btn btn-success' %>
+<% end %>
+
+<% if policy(@bookmark).destroy? %>
+  <%= link_to "Delete bookmark", [@topic, @bookmark], method: :delete, class: 'btn btn-danger' %>
+<% end %>

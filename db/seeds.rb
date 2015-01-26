@@ -29,7 +29,8 @@ topics = Topic.all
 100.times do
   Bookmark.create!(
     url: Faker::Lorem.sentence,
-    topic: topics.sample
+    topic: topics.sample,
+    user: users.sample
   )
 end
 bookmarks = Bookmark.all
