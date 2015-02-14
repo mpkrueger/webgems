@@ -10,7 +10,10 @@
     <div class="container">
       <ul class="nav nav-tabs">
         <li><%= link_to "WebGems", root_path %></li>
-        <li><%= link_to "Topics", topics_path %></li>
+        <% if current_user %>
+          <li><%= link_to "Topics", topics_path %></li>
+          <li><%= link_to "My Profile", users_show_path %></li>
+        <% end %>
 
         <div class="pull-right user-info">
           <% if current_user %>

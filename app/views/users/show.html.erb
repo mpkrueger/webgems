@@ -1,0 +1,25 @@
+<h1>My Bookmarks</h1>
+<div class="container-flexible">
+  <div class="row">
+    <% @user_bookmarks.each do |bookmark| %>
+      <div class="col-md-3">
+        <%= link_to bookmark.url, [bookmark.topic, bookmark] %>
+
+        <% if policy(bookmark).destroy? %>
+          <%= link_to "Remove", [bookmark.topic, bookmark], method: :delete %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<h1>Liked Bookmarks</h1>
+<div class="container-flexible">
+  <div class="row">
+    <% @liked_bookmarks.each do |like| %>
+      <div class="col-md-3">
+        <%= link_to like.bookmark.url, [like.bookmark.topic, like.bookmark] %>
+        <%= render partial: 'likes/like', locals: { bookmark: like.bookmark } %>
+      </div>
+    <% end %>
+  </div>
+</div>
