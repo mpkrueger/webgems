@@ -1,5 +1,6 @@
 <h1><%= @bookmark.url %></h1>
 <p>Bookmark URL: <%= @bookmark.url %></p>
+<p>Bookmark embed: <%= embed_content @bookmark.url %></p>
 <p>Topic: <%= link_to @topic.title, [@topic] %></p>
 <%= render partial: 'likes/like', locals: { bookmark: @bookmark } %>
 <p></p>

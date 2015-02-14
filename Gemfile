@@ -8,6 +8,7 @@ gem 'devise'
 gem 'figaro', '1.0'
 gem 'faker'
 gem 'pundit'
+gem 'embedly'
 
 group :production do
   gem 'pg'
@@ -16,6 +17,7 @@ end
 
 group :development do
   gem 'sqlite3'
+  gem 'pry'
 end
 
 gem 'sass-rails', '~> 4.0.3'
