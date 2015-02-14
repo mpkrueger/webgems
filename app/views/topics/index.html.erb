@@ -7,7 +7,7 @@
     <div class="row">
       <% topic.bookmarks.each do |bookmark| %>
         <div class="col-md-3">
-          <p><%= link_to bookmark.url, bookmark.url %></p>
+          <p><%= link_to bookmark.url, [topic, bookmark] %></p>
           <%= render partial: 'likes/like', locals: { bookmark: bookmark } %>
         </div>
       <% end %>
