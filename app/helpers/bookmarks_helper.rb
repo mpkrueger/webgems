@@ -6,7 +6,11 @@ module BookmarksHelper
     
     # json_obj = JSON.parse(obj)
     if obj.type == "link"
-      raw "<img src='#{obj.thumbnail_url}'>"
+      if obj.thumbnail_url == nil
+        raw "<img src='http://c2c.sulekhalive.com/lccommon/images/no-image.png' width='150' height='150'>"
+      else
+        raw "<img src='#{obj.thumbnail_url}' width='150' height='150'>"
+      end
     elsif obj.type == "video"
       raw obj.first.html
     end

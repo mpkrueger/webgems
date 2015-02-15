@@ -1,10 +1,11 @@
 <h1 class="text-center"><%= @topic.title %></h1>
 
 <%= link_to "New bookmark", new_topic_bookmark_path(@topic.id), class: 'btn btn-success' %>
-<div class="container-flexible">
+<div class="container-fluid">
   <div class="row">
     <% @bookmarks.each do |bookmark| %>
       <div class="col-md-3">
+        <%= embed_content bookmark.url %>
         <%= link_to bookmark.url, [@topic, bookmark] %>
         <%= render partial: 'likes/like', locals: { bookmark: bookmark } %>
       </div>
