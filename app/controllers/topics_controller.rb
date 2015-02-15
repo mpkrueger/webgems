@@ -9,6 +9,20 @@ class TopicsController < ApplicationController
   end
 
   def new
+    @topic = Topic.new
+  end
+
+  def create
+    @topic = Topic.new(params.require(:topic).permit(:title))
+    @topic.user = current_user
+
+    if @topic.save
+      flash[:notice] = "Your topic was saved!"
+      redirect_to topics_path
+    else
+      flash[:error] = "Uh oh, your topic was not saved."
+      redirect_to topics_path
+    end
   end
 
   def edit
