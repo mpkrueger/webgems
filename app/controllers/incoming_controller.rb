@@ -17,6 +17,7 @@ class IncomingController < ApplicationController
     end
 
     bookmark = Bookmark.new(url: @url, topic_id: @topic.id)
+    bookmark.user = @user
 
     bookmark.save!
 
